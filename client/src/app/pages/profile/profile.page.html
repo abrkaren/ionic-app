@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button
+              defaultHref="/home"
+              [text]="buttonText">
+      </ion-back-button>
+    </ion-buttons>
+    <ion-title>My profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="profile-page-wrapper">
+    <ion-card-content>
+
+      <form [formGroup]="updateForm">
+        <ion-item class="ion-no-padding">
+          <ion-label position="stacked">Email</ion-label>
+          <ion-input formControlName="email" ></ion-input>
+        </ion-item>
+
+        <ion-item class="ion-no-padding">
+          <ion-label position="stacked">Password <span style="font-size: 12px">(Enter new password if you want to change it)</span> </ion-label>
+          <ion-input formControlName="password"></ion-input>
+        </ion-item>
+
+        <ion-button color="primary" class="update" expand="full" (click)="update()" [disabled]="updateForm.invalid">Update</ion-button>
+      </form>
+
+    </ion-card-content>
+
+  </ion-card>
+
+  <ion-card>
+    <ion-card-content>
+
+      <form [formGroup]="removeForm">
+        <ion-item class="ion-no-padding">
+          <ion-label position="stacked">Enter your password</ion-label>
+          <ion-input formControlName="checkPassword" ></ion-input>
+        </ion-item>
+        <ion-text color="dark">
+          <h4 style="margin-top: 8px">If you click on the Delete Account button, then permanently delete your account</h4>
+        </ion-text>
+        <ion-text color="danger" *ngIf="passwordDoesntMatchNotification">
+          <h4 style="margin-top: 8px;">Password doesn't match!</h4>
+        </ion-text>
+      </form>
+
+      <div class="remove-profile-section">
+        <ion-button color="danger" class="remove" expand="full" (click)="remove()" [disabled]="">Delete Account</ion-button>
+      </div>
+
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

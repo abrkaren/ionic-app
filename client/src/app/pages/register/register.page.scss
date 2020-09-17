@@ -1,0 +1,36 @@
+.sign-up {
+  margin-top: 12px;
+}
+
+.have-account b {
+  color: #488AFF;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.have-account {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.bg {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("../../../assets/images/clouds.jpg");
+  background-size: cover;
+}
+
+.welcome-text {
+  text-align: center;
+  color: white;
+  padding-top: 30px;
+}
+
+.logo {
+  text-align: center;
+  padding-top: 20px;
+}

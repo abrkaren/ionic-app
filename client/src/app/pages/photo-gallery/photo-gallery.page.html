@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button
+              defaultHref="/home"
+              [text]="buttonText">
+      </ion-back-button>
+    </ion-buttons>
+    <ion-title>Photo Gallery</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div id="gallery">
+    <div class="gallery-item" *ngFor="let g of loadedGallery" (click)="zoomIn(g)">
+      <img [src]="g.thumbnailUrl" class="card img-responsive">
+      <p>{{g.title}}</p>
+    </div>
+  </div>
+
+  <ion-infinite-scroll threshold="100px" (ionInfinite)="loadGallery($event)">
+    <ion-infinite-scroll-content
+            loadingSpinner="bubbles"
+            loadingText="Loading more gallery...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
+
+  <div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-body">
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</ion-content>

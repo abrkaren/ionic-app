@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button
+              defaultHref="/home"
+              [text]="buttonText">
+      </ion-back-button>
+    </ion-buttons>
+    <ion-title>Posts</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <!--list posts start-->
+  <div class="posts">
+    <!--infinite scrool start-->
+    <ion-list>
+      <ion-item *ngFor="let post of loadedPosts">
+        <ion-avatar slot="start">
+          <img src="https://via.placeholder.com/50">
+        </ion-avatar>
+        <ion-label>
+          <h2>{{post.id + '.'}}</h2>
+          <h3>{{post.title}}</h3>
+          <p>{{post.body}}</p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+
+    <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+      <ion-infinite-scroll-content
+              loadingSpinner="bubbles"
+              loadingText="Loading more data...">
+      </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+    <!--infinite scrool end-->
+  </div>
+  <!--list posts end-->
+
+</ion-content>

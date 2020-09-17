@@ -1,0 +1,46 @@
+
+<ion-content>
+
+  <div class="bg">
+    <div class="logo">
+      <a href=""><img src="../../../assets/images/logo1.png" alt="" style="max-width: 84px;"></a>
+    </div>
+    <div class="welcome-text">
+      <p>Hello</p>
+      <p>You need to Sign in or Create an account</p>
+    </div>
+  </div>
+
+  <ion-card class="wrap">
+    <ion-card-content>
+      <form [formGroup]="registerForm">
+
+        <ion-item class="ion-no-padding">
+          <ion-label position="stacked">Email</ion-label>
+          <ion-input formControlName="email"></ion-input>
+        </ion-item>
+
+        <ion-item class="ion-no-padding">
+          <ion-label position="stacked">Password</ion-label>
+          <ion-input formControlName="password" (ngModelChange)="updateConfirmValidator()"></ion-input>
+        </ion-item>
+
+        <ion-item class="ion-no-padding">
+          <ion-label position="stacked">Confirm Password</ion-label>
+          <ion-input formControlName="checkPassword"></ion-input>
+        </ion-item>
+
+        <ion-button color="secondary" class="sign-up" expand="full" (click)="register()" [disabled]="registerForm.invalid">Sign up</ion-button>
+        <p class="have-account">Already have an account? <b routerLink="/login">Log In</b></p>
+
+      </form>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
+
+
+
+
+
+

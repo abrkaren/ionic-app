@@ -1,0 +1,78 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import '~@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+
+
+// -- fonts --
+@font-face {
+  font-family: "Montserrat-Light";
+  src: url("./assets/fonts/Monserat/Montserratarm-Regular.otf")
+}
+@font-face {
+  font-family: "Montserratarm-Medium";
+  src: url("./assets/fonts/Monserat/Montserratarm-Medium.otf")
+}
+@font-face {
+  font-family: "Montserratarm-Bold";
+  src: url("./assets/fonts/Monserat/Montserratarm-Bold.otf")
+}
+// -- fonts --
+
+// -- global styles --
+* {
+  font-family: "Montserrat-Light";
+}
+
+.wrap {
+  //margin-top: 130px;
+  position: absolute;
+  bottom: 50px;
+  left: 10px;
+  right: 10px;
+}
+.app-logo {
+  max-width: 84px;
+}
+
+@media (max-width: 376px) {
+  .welcome-text {
+    padding-top: 0!important;
+  }
+  .app-logo {
+    max-width: 50px;
+  }
+}
+
+@media (max-width: 350px) {
+  .welcome-text p {
+    margin: 4px auto;
+  }
+  .wrap {
+    bottom: 8px!important;
+  }
+}
+// -- global styles --
